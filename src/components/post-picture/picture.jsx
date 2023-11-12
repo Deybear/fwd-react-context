@@ -1,7 +1,27 @@
-import { Card } from "react-bootstrap";
+import React from 'react';
+import Carousel from 'react-bootstrap/Carousel';
+import './picture.css';
 
-export const PostPicture = () => {
+export const PostPicture = (props) =>
+{
+
   return (
-    <Card.Img src="https://cdn.pixabay.com/photo/2023/10/10/14/55/apples-8306677_960_720.jpg"></Card.Img>
+
+    <Carousel>
+      
+      {props.pictures.map((item, index) => (
+
+        <Carousel.Item key={index}>
+
+          {/* - - - - - </> IMAGE </> - - - - - */}
+          <img src={item} className='carousel-img'/>
+
+        </Carousel.Item>
+
+      ))}
+
+    </Carousel>
+
   );
+
 };

@@ -1,19 +1,20 @@
 import { CardHeader, CardImg } from "react-bootstrap";
-import { useUser } from "../../context/UserContext";
+import "./header.css";
 
-export const PostHeader = () => {
+export const PostHeader = (props) => {
 
-    const user = useUser();
+  return (
 
-    return (
-      <CardHeader>
-        <CardImg
-          src="https://discourse.disneyheroesgame.com/uploads/default/original/3X/e/8/e8b4cd21287dfa781e1cd50caac05b8bd4baf4e1.png"
-          className="post-avatar rounded-3"
-          style={{width: '80px'}}
-        >  
-        </CardImg>
-        <strong>{user.username}</strong> 
-      </CardHeader>
-    );
+    <CardHeader>
+
+      {/* - - - - - </> PHOTO </> - - - - - */}
+      <CardImg src={props.photo} className="post-avatar"></CardImg>
+
+      {/* - - - - - </> NAME </> - - - - - */}
+      <strong>{props.name}</strong>
+
+    </CardHeader>
+
+  );
+
 };
